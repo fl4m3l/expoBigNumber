@@ -75,7 +75,7 @@ multiply_lists(Lista *a, Lista *b)
 	int i;
 	mp = criar();
 	for (i = 0; i < tamanho(b); i++)
-    {
+    	{
         int hold = ler_pos(b, i);
 		inserir_ultimo(mp, 0);
        	for (; hold != 0; hold--)
