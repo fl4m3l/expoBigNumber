@@ -11,7 +11,6 @@
 int 
 main(int argc, char **argv)
 {	
-	
 	Lista *exp, *a, *b;
 	a = convert_to_list(argv[1]);
 	b = convert_to_list(argv[2]);
