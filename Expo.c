@@ -12,25 +12,19 @@ convert_to_list(char *number)
 	Lista *list;
 	list = criar();
 	for(; *number != '\0'; number++)
-	{
 		if(*number - '0' >= 0 && *number - '0' <= 9)
-		{
 			inserir_ultimo(list, *number - '0');
-		}
-	}
 	return list;
 }
 
-/* adiciona 0's a esquerda da menor da lista */
+/* adiciona 0's a esquerda da menor lista */
 void
 add_zeros(Lista *a, Lista *b)
 {
 	Lista *tmp;		
 	tmp = (tamanho(a) > tamanho(b)) ? b : a;
 	while (tamanho(a) != tamanho(b))
-	{
-		inserir_primeiro(tmp, 0);	
-	}
+		inserir_primeiro(tmp, 0);
 }
 
 /* remove 0's a esquerda */
@@ -38,9 +32,7 @@ void
 remove_zeros(Lista *l)
 { 
 	while (tamanho(l) > 1 && ler_pos(l, 0) == 0) 
-	{
 		remover_primeiro(l);	
-	}			
 }
 
 /* soma duas listas */
@@ -76,15 +68,15 @@ multiply_lists(Lista *a, Lista *b)
 	mp = criar();
 	for (i = 0; i < tamanho(b); i++)
     	{
-        int hold = ler_pos(b, i);
+        	int hold = ler_pos(b, i);
 		inserir_ultimo(mp, 0);
-       	for (; hold != 0; hold--)
-       	{
+       		for (; hold != 0; hold--)
+       		{
 			tmp = sum_lists(mp, a);
 			destruir(mp);
 			mp = tmp;
-        }
-    }
+        	}
+    	}
 	return mp;
 }
 
